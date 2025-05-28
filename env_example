@@ -1,0 +1,94 @@
+# vim: ft=bash:cc=80
+
+# Copy this file into .env, then modify.
+# If you are using this for development, it might not need many changes.
+
+
+# Are we in development or production?
+# valid values: ["dev","production"]
+RUN_ENV="dev"
+
+##########################
+#        FRONTEND        #
+##########################
+
+FRONTEND_PORT=8080
+
+#########################
+#        BACKEND        #
+#########################
+
+# localhost:<BACKEND_PORT>
+BACKEND_PORT=8084
+
+# protocol://url_of_api:<PORT>
+BACKEND_ADDR="http://localhost:8084"
+
+#############################
+#        GROUP 24 DB        #
+#############################
+
+G24_ADDRESS_INTERNAL="sg2-g24db"
+
+# where to find the db outside of a docker container. localhost on mac/windows,
+# 0.0.0.0 on linux (mostly?).
+G24_ADDRESS_EXTERNAL="0.0.0.0"
+
+# Port numbers for group24's search database.
+# Changing these here also changes them in docker compose.
+# See: https://neo4j.com/docs/operations-manual/current/configuration/ports/
+# These ports are also made available externally (localhost:port).
+
+# The http or https ports can be used to open the neo4j browser.
+
+G24_DB_HTTPS=7473
+G24_DB_HTTP=7474
+G24_DB_BOLT=7687
+
+# Password for neo4j user of the database.
+# This should not be changed. Changing this will require going into the db
+# and changing the password from inside it, as well as here, etc.
+#
+# MUST A MINIMUM OF 8 CHARACTERS
+G24_DB_PASSWORD="12345678"
+
+
+##############################
+#        ANALYTICS DB        #
+##############################
+
+# NOT NEEDED IF YOU DONT INTEND TO RUN BATCHPIPE
+
+# what ip to find the db outside of a docker container. localhost on
+# mac/windows, 0.0.0.0 on linux (mostly?).
+BATCHPIPE_ADDRESS="0.0.0.0"
+
+BATCHPIPE_DB_HTTPS=7483
+BATCHPIPE_DB_HTTP=7484
+BATCHPIPE_DB_BOLT=7697
+
+# Password for neo4j user of the database.
+# This should not be changed. Changing this will require going into the db
+# and changing the password from inside it, as well as here, etc.
+#
+# MUST A MINIMUM OF 8 CHARACTERS
+BATCHPIPE_DB_PASSWORD="12345678"
+
+# CHANGE ME IF YOUR MACHINE DOESNT HAVE THIS MUCH MEMORY!!!
+
+# to determine the ram allocation needed:
+# run the follwowing, replacing 14g with the amount of memory you have to spare.
+# docker run --rm neo4j neo4j-admin server memory-recommendation --memory=14g --docker
+    
+
+# This is for 14G - should work on lab pcs.
+# This out of memories on the host servers when running full pipeline,
+# but should work for testing smaller bits of it / with fewer workers.
+BATCHPIPE_NEO4J_dbms_memory_heap_initial__size="4900m"
+BATCHPIPE_NEO4J_dbms_memory_heap_max__size="4900m"
+BATCHPIPE_NEO4J_dbms_memory_pagecache_size="5600m"
+
+# recommendations for 28G memory - host servers
+#BATCHPIPE_NEO4J_dbms_memory_heap_initial__size="10G"
+#BATCHPIPE_NEO4J_dbms_memory_heap_max__size="10G"
+#BATCHPIPE_NEO4J_dbms_memory_pagecache_size="11G"

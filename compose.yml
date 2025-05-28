@@ -1,0 +1,162 @@
+name: sg2
+version: "3"
+services:
+  frontend: # https://github.com/nodejs/docker-node/blob/main/README.md
+    container_name: sg2-frontend # not nice but podman compose is an evil, wicked machine that breaks things
+    userns_mode: keep-id
+    build:
+      dockerfile: ./frontend/Dockerfile
+      context: .
+
+    volumes:
+      - ".:/workspace"
+
+    expose: # allow other containers to connect to frontend
+      - "${FRONTEND_PORT}"
+
+    ports: # expose frontend to outside world as localhost:FRONTEND_PORT
+      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
+
+    ulimits:
+      cpu: -1
+
+
+  g24db: # see https://neo4j.com/docs/operations-manual/current/docker/
+    container_name: sg2-g24db # not nice but podman compose is an evil, wicked machine that breaks things
+    restart: always
+    userns_mode: keep-id
+    image: "neo4j"
+
+    env_file: ".env" # forward on .env to be environment variables of the container 
+
+    expose: # for other containers; g24db:port
+      - "${G24_DB_HTTP}"
+      - "${G24_DB_HTTPS}"
+      - "${G24_DB_BOLT}"
+
+    volumes:
+      - "g24db-data:/data"
+
+    ports: # for outside world; localhost:port
+      - "${G24_DB_HTTP}:${G24_DB_HTTP}"
+      - "${G24_DB_HTTPS}:${G24_DB_HTTPS}"
+      - "${G24_DB_BOLT}:${G24_DB_BOLT}"
+
+    environment:
+      NEO4J_ACCEPT_LICENSE_AGREEMENT: "yes"
+
+      # Install apoc extensions
+      # https://neo4j.com/docs/apoc/current/installation/
+      NEO4J_apoc_export_file_enabled: "true"
+      NEO4J_apoc_import_file_enabled: "true"
+      NEO4J_apoc_import_file_use__neo4j__config: "false"
+      NEO4J_PLUGINS: "[\"apoc\"]"
+      NEO4J_AUTH: "neo4j/${G24_DB_PASSWORD}"
+      NEO4J_server_default__listen__address: "0.0.0.0"
+      NEO4J_server_http_listen__address: ":${G24_DB_HTTP}"
+      NEO4J_server_https_listen__address: ":${G24_DB_HTTPS}"
+      NEO4J_server_bolt_listen__address: ":${G24_DB_BOLT}"
+      NEO4J_dbms_memory_heap_initial__size: "500m"
+      NEO4J_dbms_memory_heap_max__size: "500m"
+      NEO4J_dbms_memory_pagecache_size: "1G"
+
+    ulimits:
+      cpu: -1
+
+    deploy:
+      resources:
+        limits:
+          memory: 8GB
+
+  backend:
+    container_name: sg2-backend # not nice but podman compose is an evil, wicked machine that breaks things
+    image: "python:3.11"
+    userns_mode: keep-id
+
+    env_file: ".env" # forward on .env to be environment variables of the container 
+
+    expose: # allow other containers to connect to backend
+      - "${BACKEND_PORT}"
+
+    ports: # for outside world; localhost:port
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
+
+    entrypoint: "/bin/bash" 
+    command: "/mount/backend/docker-entrypoint.sh"
+
+    ulimits:
+      cpu: -1
+
+    volumes:
+      - ".:/mount"
+
+  pipeline-db: # see https://neo4j.com/docs/operations-manual/current/docker/
+    container_name: sg2-pipeline # not nice but podman compose is an evil, wicked machine that breaks things
+    profiles: [batchpipe]
+    userns_mode: keep-id
+    user: ${DUID}:${DUID}
+    image: "neo4j"
+
+    env_file: ".env" # forward on .env to be environment variables of the container 
+
+    expose: # for other containers; pipeline-db:port
+      - "${BATCHPIPE_DB_HTTP}"
+      - "${BATCHPIPE_DB_HTTPS}"
+      - "${BATCHPIPE_DB_BOLT}"
+
+    volumes:
+      - "batchpipe:/data"
+      - "/:/host"
+
+    ports: # for outside world; localhost:port
+      - "${BATCHPIPE_DB_HTTP}:${BATCHPIPE_DB_HTTP}"
+      - "${BATCHPIPE_DB_HTTPS}:${BATCHPIPE_DB_HTTPS}"
+      - "${BATCHPIPE_DB_BOLT}:${BATCHPIPE_DB_BOLT}"
+
+    environment:
+      NEO4J_ACCEPT_LICENSE_AGREEMENT: "yes"
+
+      # Install apoc extensions
+      # https://neo4j.com/docs/apoc/current/installation/
+      NEO4J_apoc_export_file_enabled: "true"
+      NEO4J_apoc_import_file_enabled: "true"
+      NEO4J_apoc_import_file_use__neo4j__config: "false"
+      NEO4J_PLUGINS: "[\"apoc\",\"graph-data-science\"]"
+      NEO4J_AUTH: "neo4j/${BATCHPIPE_DB_PASSWORD}"
+      NEO4J_server_default__listen__address: "0.0.0.0"
+      NEO4J_server_http_listen__address: ":${BATCHPIPE_DB_HTTP}"
+      NEO4J_server_https_listen__address: ":${BATCHPIPE_DB_HTTPS}"
+      NEO4J_server_bolt_listen__address: ":${BATCHPIPE_DB_BOLT}"
+
+      # CHANGE ME IF YOUR MACHINE DOESNT HAVE THIS MUCH MEMORY!!!
+      # This is now set in envfile for convinience
+      # run the follwowing, replacing 14g with the amount of memory you have to spare.
+      # docker run --rm neo4j neo4j-admin server memory-recommendation --memory=14g --docker
+      
+      # the below is for 14gb - this will work on lab machines as long as you dont do all the pipeline / 
+      # use too many workers
+      #NEO4J_dbms_memory_heap_initial__size: "4900m"
+      #NEO4J_dbms_memory_heap_max__size: "4900m"
+      #NEO4J_dbms_memory_pagecache_size: "5600m"
+      
+      # full run requires more - i give it 28!
+      NEO4J_dbms_memory_heap_initial__size: "4900m"
+      NEO4J_dbms_memory_heap_max__size: "4900m"
+      NEO4J_dbms_memory_pagecache_size: "5600m"
+
+    ulimits:
+      cpu: -1
+
+    deploy:
+      resources:
+        limits:
+          memory: 100G
+
+volumes:
+  g24db-data:
+      external: true
+      name: sg2_g24db-data
+
+  batchpipe:
+    external: true
+    name: batchpipe 
