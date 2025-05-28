@@ -1,0 +1,15 @@
+canvas {
+    position: absolute;
+}
+
+.timeline {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 10px;
+    max-width: fit-content;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}

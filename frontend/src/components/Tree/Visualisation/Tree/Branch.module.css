@@ -1,0 +1,10 @@
+.path {
+  fill: none;
+  stroke: var(--brand-700);
+  stroke-width: 3px;
+}
+
+.soften {
+  opacity: 0.5;
+  stroke-width: 2px;
+}

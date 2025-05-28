@@ -1,0 +1,7 @@
+.body {
+    border: 0.2rem solid var(--brand-900);
+    border-radius: 25px;
+    width: 96%;
+    margin-left: 2%;
+    overflow: hidden; 
+}

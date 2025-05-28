@@ -1,0 +1,85 @@
+.toggleContainer {
+    display: flex;
+    height: 4rem; 
+    background-color: var(--brand-900);
+    border: 0.15rem solid var(--brand-900);
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1rem;
+    margin-left: 3rem;
+    margin-right: 2rem;
+    flex-direction: flex-end;
+    font-weight: 600;
+    font-size: 1rem;
+    background-color: var(--white);
+    cursor: pointer;
+    min-width: 18rem;
+}
+
+.toggleContainer:focus {
+    border: 0.15rem solid var(--brand-200);
+}
+
+.toggleButton {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.toggleCircle {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    position: absolute;
+    left: 3%; 
+    width: 47%;
+    height: calc(100% - 10px); 
+    transition: left 0.3s ease;
+    background-color: var(--brand-900);
+}
+
+.toggleCircle.reduce {
+    transition: none;
+}
+
+.circleOn {
+    left: 50%; 
+}
+
+.toggleOn .toggleLabelOn {
+    color: var(--white);
+    color: var(--brand-900);
+}
+
+.toggleLabelOn,
+.toggleLabelOff {
+    position: absolute;
+    width: 50%;
+    text-align: center;
+    line-height: 40px; 
+    font-weight: bold;
+    user-select: none;
+    color: var(--brand-900); 
+    z-index: 1; 
+    color: var(--white);
+}
+
+.toggleOff .toggleLabelOn {
+    color: var(--brand-900); 
+    color: var(--white);
+}
+
+.toggleOff .toggleLabelOff {
+    color: var(--white);
+    color: var(--brand-900);
+}
+
+.toggleLabelOn {
+    left: 0;
+    color: var(--brand-900);
+    color: var(--white);
+}
+
+.toggleLabelOff {
+    right: 0;
+}

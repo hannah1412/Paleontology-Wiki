@@ -1,0 +1,81 @@
+.period-container {
+    align-items: center;
+    height: 5rem;
+    border-top: none;
+    z-index: 2;
+    overflow: auto;
+    overflow-y: hidden;
+    background-color: var(--brand-900);
+    overflow-x: auto; 
+    white-space: nowrap; 
+}
+
+.period-container::-webkit-scrollbar {
+    height: 0.5rem;
+}
+
+.period-container::-webkit-scrollbar-thumb {
+    background-color: var(--white);
+    border-radius: 1rem;
+    border: 0.15rem solid var(--brand-900);
+    border-left: none;
+    border-right: none;
+}
+
+.period-container::-webkit-scrollbar-track {
+    background-color: var(--brand-900); 
+}
+
+.button-period {
+    color: var(--brand-900);
+    height: 5rem;
+    border: none;
+    text-align: center;
+    background-color: var(--white);
+    font-weight: 700;
+    min-width: 28rem;
+    font-size: 1.2rem;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5); 
+}
+
+.button-period:focus {
+    border: 0.15rem solid var(--brand-200);
+}
+
+.button-period:hover {
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.button-period.blur {
+    color: var(--brand-900);
+    border: none;
+    background-color: var(--brand-900) ;
+    color: var(--white);
+    margin: 0; 
+    text-align: center;
+}
+
+.button-period.blur:focus {
+    border: 0.15rem solid var(--brand-200);
+}
+
+
+.button-period.blur:hover {
+    background-color: var(--white);
+    color: var(--brand-900);
+    cursor: pointer;
+    transition: ease-in-out 0.75s;
+    font-weight: 700;
+}
+
+.button-period.blur.reduce:hover {
+    transition: none;
+}
+
+
+:root [dark-mode="true"]
+.period-container::-webkit-scrollbar-thumb {
+    background-color: var(--brand-200);
+}

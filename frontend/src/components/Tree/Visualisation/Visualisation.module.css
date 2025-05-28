@@ -1,0 +1,39 @@
+.window {
+  width: 100%;
+  height: max(100lvh, 60rem);
+  position: relative;
+  overflow: hidden;
+  font-size: 1rem;
+}
+
+.error_panel {
+  color: var(--brand-900);
+  font-size: 1.25rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.help_button {
+  display: block;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 1.15rem;
+  color: var(--brand-900);
+  background: var(--grey-100);
+  border: solid 2px var(--brand-900);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 30px 15px var(--white);
+
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+}
+
+.help_button:hover {
+  background: var(--brand-900);
+  color: var(--grey-100);
+}

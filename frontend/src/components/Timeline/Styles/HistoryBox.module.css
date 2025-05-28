@@ -1,0 +1,86 @@
+.overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 70vw;
+    max-height: 35rem;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    z-index: 100;
+    padding: 5%;
+    border: 0.3rem solid var(--brand-900);
+    border-radius: 2rem;
+    gap: 2.5rem;
+    overflow-y: scroll;
+}
+
+.close {
+    position: absolute;
+    right: 8vw;
+    top: 8vh;
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+    color: var(--brand-900);
+    background-color: var(--white);
+    border: 0.15rem solid var(--brand-900);         
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.close:focus {
+    background-color: var(--brand-200);
+} 
+
+.close:hover {
+    background-color: var(--brand-200);
+    border: 0.15rem solid var(--brand-900);
+    cursor: pointer;
+    opacity: 0.8;
+}
+/* .close:before, .close:after {
+    position: absolute;
+    content: '';
+    top: 8px;
+    left: 18px;
+    height: 24px;
+    width: 4px;
+    background-color: var(--brand-900);
+}
+
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after {
+    transform: rotate(-45deg);
+} */
+
+.timeline {
+    z-index: 101;
+    width: auto;
+    height: auto;
+}
+
+:root [dark-mode="true"]
+.container {
+    background-color: var(--grey-400);
+}

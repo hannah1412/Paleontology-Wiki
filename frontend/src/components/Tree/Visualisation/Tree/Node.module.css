@@ -1,0 +1,55 @@
+.node {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.node_button {
+  position: relative;
+  display: block;
+  top: -1.25rem;
+  min-width: 12.5rem;
+  height: 2.5rem;
+
+  background-color: var(--grey-100);
+  border: solid 3px var(--brand-900);
+  color: var(--brand-900);
+  padding: 0.4rem 0.8rem;
+  font-weight: 500;
+  font-size: 1.025rem;
+  border-radius: 25px;
+}
+
+.motion {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+}
+
+.selected {
+  background-color: var(--brand-900);
+  color: var(--grey-100);
+}
+
+.soften {
+  opacity: 0.5;
+  border: solid 2px var(--brand-900);
+}
+
+.motion:hover,
+.motion:focus,
+.motion:active {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+}
+
+.node_button:hover,
+.node_button:focus,
+.node_button:active {
+  cursor: pointer;
+  opacity: 1;
+}

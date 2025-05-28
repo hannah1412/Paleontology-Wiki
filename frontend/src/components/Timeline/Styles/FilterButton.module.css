@@ -1,0 +1,240 @@
+.button-toggle {
+    /* padding: 0.5rem; */
+    border-radius: 0.5rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    z-index: 1;
+    /* width: 100%; */
+    overflow: hidden;
+    font-weight: 600;
+    color: var(--brand-900);
+    background-color: var(--white);
+    position: relative;
+    border: 0.15rem solid var(--brand-900);
+    cursor: pointer; 
+
+    font-weight: 600;
+    font-size: 1rem;
+    /* display: flex; */
+    align-items: center; 
+    min-height: 4rem;
+    /* width: 26rem; */
+    width: 22rem;
+    text-align: center;
+}
+
+
+.button-toggle.show {
+    background-color: var(--brand-900);
+    color: var(--white);
+    text-align: center;
+}
+
+.button-toggle:focus {
+    border: 0.15rem solid var(--brand-200);
+}
+
+.button-toggle::before {
+    display: none;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--brand-900);
+    color: var(--white);
+    animation: normal;
+    z-index: -1;
+    top:0;
+    left: 0;
+}
+
+.button-toggle:hover {
+    color: var(--white);
+}
+
+.button-toggle:hover::before {
+    display: block;
+    animation: moveRectangle 1s forwards;
+}
+
+.button-toggle.reduce:hover::before {
+    animation: none;
+}
+
+@keyframes moveRectangle {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+
+.dropdown {
+    border: black;
+    background: none;
+    margin: 1rem 0 1rem 1rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    font-weight: 600;
+    margin-right: 0rem;
+}
+
+.dropdown-content {
+    display: none;
+    border: 1px solid var(--grey-100);
+    z-index: 1;
+    width: 100%;
+    border: 0.15rem solid var(--brand-900);
+    border-radius: 10px;
+    overflow: auto;
+    position: relative;
+    top: 0.3rem;
+    text-align: left;
+}
+
+.dropdown-content-font {
+    display: none;
+    border: 1px solid var(--grey-100);
+    z-index: 1;
+    width: 100%;
+    border: 0.15rem solid var(--brand-900);
+    border-radius: 10px;
+    overflow: auto;
+    position: relative;
+    top: 0.3rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.show {
+    display: block;
+    justify-content: space-evenly;
+}
+
+.buttons {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: var( --brand-900);
+    font-size: 1rem;
+    transition: all .3s;
+    position: relative;
+    z-index: 1;
+    border: none;
+    width: 100%;
+    background-color: var(--white);
+    font-weight: 600;
+}
+
+.buttons:focus {
+    background-color: var(--brand-200);
+}
+
+.buttons:hover {
+    background-color: var(--brand-200);
+    cursor: pointer;
+}
+
+/* Specifically for SizeSelector.js */
+
+.settings-buttons-container {
+    display: flex;
+    border-radius: 1rem; 
+    overflow: hidden;
+}
+
+.settings-buttons {
+    cursor: pointer;
+    background-color: var(--white);
+    border-radius: 1rem; 
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    font-weight: 600;
+    color: var(--brand-900);
+    border: 0.15rem solid var(--brand-900);
+    padding: 0.5rem;
+}
+
+.settings-buttons:hover {
+    background-color: var(--brand-200);
+}
+
+.font-settings-sections{
+    margin-bottom: 3rem;
+}
+
+.slider {
+    width: 70%; 
+    height: 1rem;
+    border-radius: 5px; 
+    background: var(--white);
+    outline: none; 
+    cursor: pointer;
+    margin-right: 1rem;
+    border: 0.15rem solid var(--brand-900);
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    width: 1.5rem; 
+    height: 1.5rem;
+    border-radius: 50%; 
+    background-color: var(--brand-900);
+    cursor: pointer; 
+}
+
+.slider::-webkit-slider-thumb:focus {
+    background-color: var(--brand-200);
+}
+
+.slider:focus {
+    color: var(--brand-200);
+}
+
+
+/* DARK MODE */
+
+:root [dark-mode="true"] 
+.buttons {
+    color: var(--black);
+    display: block;
+    padding: .75rem 1.25rem;
+    color: var( --brand-900);
+    font-size: 1.2rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    z-index: 1;
+    border: none;
+    width: 100%;
+    background-color: var(--white);
+}
+
+:root [dark-mode="true"] 
+.buttons:hover {
+    background-color: var(--brand-200)
+
+}
+
+:root [dark-mode="true"] 
+.settings-buttons {
+    cursor: pointer;
+    background-color: var(--white);
+    border-radius: 1rem; 
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    font-weight: 600;
+    color: var(--brand-900);
+}
+
+:root [dark-mode="true"] 
+.settings-buttons:hover {
+    background-color: var(--brand-200);
+}

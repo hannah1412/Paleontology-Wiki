@@ -1,0 +1,144 @@
+/* INFORMATION PANEL */
+.Information {
+    padding-left: 3vh;
+    padding-right: 3vh;
+    align-content: space-evenly;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    font-size: inherit;
+    letter-spacing: inherit;
+    min-width: 2vw;
+    height: inherit;
+}
+
+.noInfo {
+    text-align: left;
+    padding-left: 5%;
+    padding-right: 5%;
+    overflow: hidden;
+    padding-top: 20vh;
+    font-size: inherit;
+    letter-spacing: inherit;
+}
+
+.title_container {
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    word-break:break-all;
+    margin-right: 10%;
+    width: 100%;
+    font-size: inherit;
+    letter-spacing: inherit;
+}
+
+/* COUNTRY */
+.infoTable {
+    margin-right: 10%;
+    width: 100%;
+    word-break: break-all;
+    font-size: inherit;
+    letter-spacing: inherit;
+}
+
+.categories {
+    margin-right: 30vh;
+    word-break: break-all;
+}
+
+.flag {
+    max-width: 30%;
+    max-height: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+}
+
+/* ICONS */
+.audio_icon {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    height: 3vh;
+    width: 3vh;
+    color: var(--brand-900);
+    display: flex;
+    scale: 120%;
+}
+
+.location_icon {
+    margin-bottom: 1vh;
+    height: 3vh;
+    width: 3vh;
+    color: var(--brand-900);
+}
+
+:root [dark-mode="true"] .audio_icon {
+    color: var(--black);
+}
+
+.audio_icon:hover,
+.location_icon:hover, .search_icon:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    cursor: pointer;
+}
+
+.search_icon {
+    margin-bottom: 1vh;
+    margin-left: 2vh;
+    height: 3vh;
+    width: 3vh;
+    color: var(--brand-900);
+}
+
+/* CARDS */
+.card {
+    border-style: solid;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+    height: min-content;
+    margin-bottom: 4%;
+    display: flex;
+    overflow: hidden;
+    word-wrap: break-word;
+    font-size: inherit;
+    letter-spacing: inherit;
+}
+
+:root [dark-mode="true"] .card {
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3);
+}
+
+.cardImages {
+    max-width: 40%;
+    max-height: 40%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    line-height: 100px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7);
+}
+
+:root [dark-mode="true"] .card:hover {
+    box-shadow: 0 8px 16px 0 rgb(255, 255, 255);
+}
+
+.cardText {
+    margin-left: 1rem;
+    font-weight: 350;
+    margin-top: -1%;
+    word-wrap: break-word;
+    max-width: 75%;
+    overflow: hidden;
+    flex-wrap: wrap;
+    font-size: inherit;
+    letter-spacing: inherit;
+}

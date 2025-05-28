@@ -1,0 +1,180 @@
+/* Navigation CSS */
+
+.wrapper_button{
+  padding: 1rem;
+  font-weight: 1000;
+  height: 55px;
+  margin-top: 60px;
+  float:right;
+  background-color: var(--brand-900);
+  color: var(--brand-100);
+  font-size: 10px;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px #00000040;
+  border: 1px solid var(--brand-900);
+  cursor: pointer;
+
+}
+.wrapper_button:hover, .wrapper button:focus {
+  background: var(--grey-500);
+}
+
+.navButton {
+  background-color: var(--brand-900);
+  border: none;
+  color: var(--grey-100);
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.navButton:hover {
+  background-color: var(--grey-100);
+}
+.navButtonExpanded {
+  top: 300px;
+  position: relative;
+  background-color: var(--brand-900);
+  border: none;
+  color: var(--grey-100);
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+/* Image CSS */
+
+.imageWrapper img[src=""]{
+  display: none;
+}
+
+
+.imageWrapper img[src="https://upload.wikimedia.org/wikipedia/commons/8/8a/OOjs_UI_icon_edit-ltr.svg"]{
+display: none;
+}
+.imageWrapper img[src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Merge-arrows.svg/100px-Merge-arrows.svg"]{
+display: none;
+}
+
+.imageWrapper img[src$=".tif"]{
+display:none;
+
+}
+
+.imageWrapper img[src$=".pdf"]{
+display:none;
+
+}
+
+
+.thumbnail {
+  cursor: pointer;
+
+}
+
+.thumbnail:hover {
+  box-shadow: 0 0 3px 3px var(--brand-900);
+  cursor: pointer;
+}
+
+.imageBox {
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.resultImage {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/*css for the container of the image when expanded*/
+.containerImage {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  overflow: hidden;
+
+
+}
+
+/*css for the expanded image*/
+.expandedImage{
+  align-items: center;
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:auto;
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+
+/*css for the close expanded image button*/
+.closeButton {
+  position: absolute;
+  right: 8vw;
+  top: 9vh;
+  width: 45px;
+  height: 45px;
+  opacity: 1;
+  font-size: 30px;
+  background-color: var(--grey-200);
+  color: var(--brand-900);
+  border-radius: 100%;
+  border-color: var(--brand-900);
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  
+}
+.closeButton h1{
+  top: 50%;
+}
+
+.closeButton:hover{
+  color: var(--brand-900);
+  opacity: 0.8;
+}
+
+
+  .main button:hover, .main button:focus {
+    background: var(--grey-300);
+    color: var(--brand-900);
+    }
+  
+.fig {
+  border: 1px #cccccc solid;
+  padding: 4px;
+  margin: auto;
+}
+    
+.figcap {
+  outline: 2px solid var(--grey-900);
+  background-color: var(--grey-200);
+  color: var(--grey-900);
+  font-style: italic;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

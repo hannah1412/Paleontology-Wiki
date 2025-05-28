@@ -1,0 +1,18 @@
+.outer {
+    display: flex;
+}
+
+.mmap {
+    width: 50%;
+    margin-left: 2%;
+}
+
+.summary {
+    width: 50%;
+    margin-left: 2%;
+    font-size: 125%;
+}
+
+body{
+    color: #062261;
+}

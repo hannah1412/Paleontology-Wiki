@@ -1,0 +1,29 @@
+.map {
+    height: 100%;
+    width: 100%;
+}
+
+.mapContainer,.mapContainer_hidden {
+    border-style:solid;
+    border-radius: 10px;
+    margin-top: 1rem;
+    height: 80vh;
+    resize: horizontal;
+    overflow: hidden;
+    width: 50vw;
+    min-width: 100%;
+    max-width: 114%;
+    z-index: 10;
+}
+
+.mapContainer_hidden{
+    width: 85vw;
+}
+
+.mapContainer::-webkit-resizer, .mapContainer::-moz-resizer{
+    background-color: var(--brand-900);
+}
+
+.leaflet-marker-icon{
+     outline-style: 10px solid rgb(224, 15, 113);
+}

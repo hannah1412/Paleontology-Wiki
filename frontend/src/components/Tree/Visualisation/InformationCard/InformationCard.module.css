@@ -1,0 +1,285 @@
+.card {
+  width: fit-content;
+  max-width: min(80%, 35rem);
+  /* max-width: 25rem; */
+  position: absolute;
+  top: 25%;
+  right: 0;
+  background: var(--grey-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 65%;
+  height: 100%;
+  max-height: min(84%, 40rem);
+  border: 2px solid var(--brand-900);
+  border-right: none;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  z-index: 5;
+  padding: 1rem;
+  box-shadow: 0 0 30px 15px var(--white);
+}
+
+.overflow {
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 100%;
+}
+
+@media (min-width: 48rem) {
+  .card {
+    top: 15%;
+  }
+}
+
+.animate_card {
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+}
+
+.toggle_button {
+  position: absolute;
+  top: 9rem;
+  left: -1px;
+  font-size: 1.15rem;
+  width: 10.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  transform-origin: bottom left;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transition: scale 0.2s ease-in-out;
+  -webkit-transition: scale 0.2s ease-in-out;
+  -o-transition: scale 0.2s ease-in-out;
+  -moz-transition: scale 0.2s ease-in-out;
+  border: 2px solid var(--brand-900);
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  background-color: var(--brand-900);
+  color: var(--grey-100);
+  font-weight: 600;
+}
+
+.hide {
+  transform: translate(100%, 0);
+  -webkit-transform: translate(100%, 0);
+  -moz-transform: translate(100%, 0);
+  -o-transform: translate(100%, 0);
+}
+
+.toggle_button:hover,
+.toggle_button:active {
+  cursor: pointer;
+}
+
+.title {
+  font-size: 1.75rem;
+  color: var(--brand-900);
+  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 0.15rem;
+  min-width: fit-content;
+}
+
+.type {
+  font-size: 1rem;
+  color: var(--brand-900);
+  margin: 0;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--brand-900);
+  margin-top: 0;
+}
+
+.parent_title,
+.children_title {
+  font-size: 1rem;
+  color: var(--brand-900);
+  margin: 0;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.parent_list,
+.children_list {
+  font-size: 1rem;
+  color: var(--brand-900);
+  margin: 0;
+  margin-top: 0.5rem;
+  font-weight: 400;
+  align-self: flex-start;
+}
+
+.parent_list li:hover,
+.children_list li:hover {
+  cursor: pointer;
+  color: var(--brand-600);
+}
+
+.children_list {
+  margin-bottom: 1.5rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  position: relative;
+}
+
+.actions button,
+.actions a {
+  color: var(--brand-100);
+  /* font-size: 0.9rem; */
+  background-color: var(--brand-900);
+  border: 2px solid var(--brand-900);
+  padding: 0.25rem 0.4rem;
+  margin: 1%;
+  border-radius: 5px;
+  width: 45%;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+}
+
+.actions button:hover,
+.actions a:hover,
+.actions button:focus,
+.actions a:focus,
+.actions button:active,
+.actions a:active {
+  cursor: pointer;
+  text-decoration: null;
+}
+
+.animate_motion button:hover {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+}
+
+.icon {
+  margin-right: 0.5rem;
+  width: 0.85rem;
+  position: relative;
+  top: 1px;
+  width: 1em;
+}
+
+.toggle_icon {
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  font-size: 0.9rem;
+  position: relative;
+  top: 2px;
+}
+
+.flip {
+  transform: rotateX(-180deg);
+  -webkit-transform: rotateX(-180deg);
+  -moz-transform: rotateX(-180deg);
+  -o-transform: rotateX(-180deg);
+}
+
+.animate_appearance {
+  animation-duration: 1.5s;
+  animation-name: animate-drop;
+}
+
+.inactive_button {
+  color: var(--grey-700) !important;
+  border: 2px solid var(--grey-700) !important;
+  background: var(--grey-200) !important;
+  cursor: default !important;
+}
+
+.inactive_button:hover {
+  transform: scale(1) !important;
+  -webkit-transform: scale(1) !important;
+  -moz-transform: scale(1) !important;
+  -o-transform: scale(1) !important;
+}
+
+@keyframes animate-drop {
+  0% {
+    transform: translate(100%, 0);
+  }
+
+  50% {
+    transform: translate(100%, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.dropdownContent {
+  position: absolute;
+  background-color: var(--brand-900); /* Background color of the dropdown */
+  width: 45%;
+  z-index: 1; /* Ensure the dropdown is displayed above other elements */
+  top: 100%;
+  right: 2.5%;
+  border-radius: 5px;
+  /* need both flex and column for column */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
+.dropdownContent a {
+   /* Text color of the dropdown items */
+  /* padding: 8px; */
+  width: 100%;
+  height: 100%;
+  text-decoration: none; /* Remove underline from the links */
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.dropdownContent a:hover {
+  background-color: var(--brand-100);
+  color: var(--brand-900)
+}
+
+
+.show {
+  display: flex; /* Show the dropdown content */
+}
+
+.audio {
+  background-color: var(--grey-100);
+  border: none;
+  color: var(--brand-900);
+  cursor: pointer;
+  margin-left: 1rem;
+}

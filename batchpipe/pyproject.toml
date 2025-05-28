@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "batchpipe"
+version = "0.1.0"
+description = "the batch data injestion and analytics pipeline for search"
+authors = ["Niklas Dewally <niklas@dewally.com>"]
+readme = "README.md"
+packages = [{include = "batchpipe", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.31.0"
+luigi = "^3.5.0"
+neo4j = "^5.16.0"
+rich = "^13.7.0"
+python-dotenv = "^1.0.1"
+pywikibot = "^8.6.0"
+pandoc = "^2.3"
+mwparserfromhell = "^0.6.6"
+beautifulsoup4 = "^4.12.3"
+bs4 = "^0.0.2"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

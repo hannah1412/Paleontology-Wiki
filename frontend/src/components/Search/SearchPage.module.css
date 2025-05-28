@@ -1,0 +1,302 @@
+
+/*general page features*/
+.main {
+  max-width: 80%;
+  width: 80%;
+  height: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  display:flex;
+  margin: auto;
+  padding-top: 2rem;
+  row-gap: 1rem;
+  color: var(--brand-900) !important;
+}
+.wrapper{
+  height: 820px;
+  overflow-y:  auto;
+}
+
+/*holds all the search bar features*/
+.container {
+display:flex;
+align-items: center;
+flex-grow: 1;
+margin-left: 1rem;
+margin-right: 1rem;
+margin-bottom: 10px;
+}
+
+/*main title css*/
+.h1 {
+padding-left: 20px;
+color: var(--brand-900) !important;
+}
+
+/*recommendations title css*/
+.h2 {
+text-align: left;
+margin-left: 20px;
+font-weight: 120%;
+color: var(--brand-900) !important;
+
+}
+
+/* information icon */
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  padding: 5px;
+  background-color:  var(--brand-900);
+  color: var(--brand-100);
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.infoContainer{
+  display: flex;
+  flex-direction:row;
+}
+
+/*regular text features, ensuring no unnessecary capitilisation*/
+.normalText{
+  text-transform: none;
+}
+
+.listContainer{
+  width: 100%;
+}
+
+.listContainer img[src=""]{
+  display: none;
+}
+
+
+.listContainer img[src="https://upload.wikimedia.org/wikipedia/commons/8/8a/OOjs_UI_icon_edit-ltr.svg"]{
+  display: none;
+}
+
+.listContainer img[src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Merge-arrows.svg/100px-Merge-arrows.svg"]{
+  display: none;
+}
+
+.listContainer img[src$=".tif"]{
+  display:none;
+
+}
+
+.listContainer img[src$=".pdf"]{
+  display:none;
+
+}
+
+
+/*container for recommendations box*/
+.recommendationsContainer{
+color: var(--brand-900) !important;
+border: 1px solid var(--grey-900);
+box-shadow: 0 2px 8px #00000040;
+border-radius: 14px;
+position: relative;
+display: flex;
+flex-wrap: wrap;
+background: var(--grey-100);
+z-index: 0;
+
+}
+
+/*titles for recommendations to be capitilised*/
+.title {
+  text-transform: capitalize;
+  color: var(--brand-700) !important;
+}
+.title:hover {
+  text-transform: capitalize;
+  color: var(--brand-800) !important;
+}
+
+/*making search and image flex*/
+.search {
+flex:1;
+}
+.image {
+flex:1;
+}
+
+/*defining the input css from the search bar*/
+.search input{
+padding: 10px;
+font-size: 20px;
+color: var(--brand-900) !important;
+border: 1px solid var(--brand-900);
+flex: 1;
+border-radius: 14px;
+box-shadow: 0 2px 8px #00000040;
+background: var(--grey-100);
+}
+/*css for the enter and image gallery buttons*/
+.search button {
+padding: 10px;
+background-color: var(--brand-900);
+color: var(--brand-100);
+font-size: 20px;
+border-radius: 14px;
+box-shadow: 0 2px 8px #00000040;
+border: 1px solid var(--brand-900);
+margin-left: 5px;
+cursor: pointer;
+}
+/*css for what happens to buttons when hover*/
+.search button:hover, .search button:focus {
+  background: var(--grey-500);
+  border-color: var(--grey-500);
+
+}
+
+/*css for list of results*/
+.ul {
+float: left;
+list-style-type: none;
+font-size: 20px;
+}
+/*css for list of images from results*/
+.resultImage {
+height: 75;
+cursor: pointer;
+}
+/*css for hover*/
+.resultImage:hover {
+box-shadow: 0 0 3px 3px var(--brand-900);
+}
+/*css for the container of the image when expanded*/
+.containerImage {
+position: fixed;
+width: 100%;
+height: 100%;
+left: 0;
+top: 0;
+background: rgba(0, 0, 0, 0.2);
+z-index: 1;
+overflow: hidden;
+}
+/*css for the expanded image*/
+.expandedImage{
+align-items: center;
+position: fixed;
+top:0;
+left:0;
+right:0;
+bottom:0;
+margin:auto;
+width: 80%;
+height: 80%;
+object-fit: contain;
+}
+
+.noResults {
+margin: 1rem;
+color: var(--brand-900) !important;
+}
+
+.closeButton {
+position: absolute;
+right: 8vw;
+top: 9vh;
+width: 45px;
+height: 45px;
+opacity: 1;
+font-size: 30px;
+background-color: var(--grey-200);
+color: var(--brand-900);
+border-radius: 100%;
+border-color: var(--brand-900);
+font-weight: bold;
+text-align: center;
+cursor: pointer;
+
+}
+.closeButton h1{
+top: 50%;
+}
+
+.closeButton:hover{
+color: var(--brand-900);
+opacity: 0.8;
+}
+
+
+.main button:hover, .main button:focus {
+  background: var(--grey-300);
+  color: var(--brand-900);
+  }
+
+  .fig {
+    border: 1px #cccccc solid;
+    padding: 4px;
+    margin: auto;
+}
+      
+.figcap {
+    outline: 2px solid var(--grey-900);
+    background-color: var(--grey-200);
+    color: var(--grey-900);
+    font-style: italic;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* documentation css */
+
+.documentationOpenButton{
+  transform: rotate(-90deg);
+  padding: 10px;
+  position: absolute;
+  float: right;
+  top: 50%;
+  left: -100px;
+  font-size: 20px;
+  background-color: var(--brand-900);
+  color: var(--brand-100);
+  border-radius: 14px;
+  border-color:var(--brand-900);
+  cursor: pointer;
+}
+
+
+.documentationBox{
+  float: left;
+  padding: 20;
+  height: 80vh;
+  width: 60vw;
+  z-index: 1;
+  margin-top: 5%;
+  padding: 10px;
+  position: absolute;
+  background-color: var(--brand-100);
+  border-radius: 14px;
+  border: 1px solid var(--brand-900);
+  box-shadow: 0 2px 8px #00000040;
+  overflow:auto;
+}
+
+.documentationCloseButton{
+  transform: rotate(-90deg);
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--brand-900);
+  color: var(--brand-100);
+  border-radius: 100%;
+  border-color:var(--brand-900);
+}
+

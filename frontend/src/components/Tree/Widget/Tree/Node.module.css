@@ -1,0 +1,44 @@
+.node {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.node_button {
+  position: relative;
+  display: block;
+  top: -1rem !important;
+  width: fit-content !important;
+  min-width: 10rem !important;
+  height: 2rem !important;
+
+  background-color: var(--grey-100);
+  border: solid 2px var(--brand-800);
+  color: var(--brand-800);
+  padding: 0.4rem 0.8rem !important;
+  font-weight: 400 !important;
+  font-size: 0.9rem !important;
+  border-radius: 15px;
+  cursor: default !important;
+
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+}
+
+.node_button.larger {
+  top: 0 !important;
+}
+
+.selected {
+  background-color: var(--brand-800) !important;
+  color: var(--grey-100) !important;
+}
+
+.soften {
+  background-color: var(--grey-100) !important;
+  border: solid 2px var(--brand-800) !important;
+  color: var(--brand-800) !important;
+}

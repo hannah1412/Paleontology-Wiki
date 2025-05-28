@@ -1,0 +1,25 @@
+
+/* CSS to style Leaflet elements in dark mode */
+:root [dark-mode="true"] .widget
+{
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+:root [dark-mode="true"] .map
+{
+  border-color: black;
+}
+
+.widget{
+    width: 100%;
+    height: 100%;
+}
+
+.map {
+    width: 75%; 
+    border-style:solid;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 0.2rem;
+    height:65%
+}

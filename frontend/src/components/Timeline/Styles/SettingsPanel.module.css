@@ -1,0 +1,118 @@
+
+.card {
+	width: auto;
+	max-width: 80%;
+	height: auto;
+	display: flex;
+	padding-right: 1rem;
+	position: absolute;
+	left: 0;
+	background: var(--grey-100);
+	align-items: center;
+	border-right: 0.15rem solid var(--brand-900);
+	border-bottom: 0.15rem solid var(--brand-900);
+	height:15rem;
+	z-index: 2;
+	padding-top: 0.5rem;
+	height: 100%;
+	top: 0;
+}
+
+.animate_card {
+	transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+}
+
+.animate_card.reduce {
+	transition: none;
+	-webkit-transition: none;
+	-o-transition: none;
+	-moz-transition: none;
+}
+
+.toggle_button {
+	position: absolute;
+	top: 12.4rem;
+	right: 0px;
+	font-size: 1.2rem;
+	width: 15rem;
+	height: 2.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem;
+
+	transform-origin: bottom right;
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transition: scale 0.2s ease-in-out;
+	-webkit-transition: scale 0.2s ease-in-out;
+	-o-transition: scale 0.2s ease-in-out;
+	-moz-transition: scale 0.2s ease-in-out;
+
+	border: 2px solid var(--brand-900);
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+	background-color: var(--brand-900);
+	color: var(--grey-100);
+	font-weight: 600; 
+}
+
+.toggle_button:focus {
+	border: 0.15rem solid var(--brand-200);
+}
+
+.hide {
+	transform: translate(-100%, 0);
+	-webkit-transform: translate(-100%, 0);
+	-moz-transform: translate(-100%, 0);
+	-o-transform: translate(-100%, 0);
+}
+
+
+.toggle_button:hover,
+.toggle_button:active {
+	cursor: pointer;
+}
+
+
+.parent_list,
+.children_list {
+	font-size: 1.2rem;
+	color: var(--brand-900);
+	margin-top: 0rem;
+	font-weight: 400;
+	align-self: flex-start;
+	line-height: 150%;
+}
+
+.list_item {
+	margin-bottom: 2em;
+}
+
+
+.flip {
+	transform: rotateX(-180deg);
+	-webkit-transform: rotateX(-180deg);
+	-moz-transform: rotateX(-180deg);
+	-o-transform: rotateX(-180deg);
+}
+
+
+@keyframes animate-drop {
+	0% {
+	transform: translate(100%, 0);
+	}
+
+	50% {
+	transform: translate(100%, 0);
+	}
+
+	100% {
+	transform: translate(0, 0);
+	}
+}

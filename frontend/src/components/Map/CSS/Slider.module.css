@@ -1,0 +1,49 @@
+.slider {
+    padding-top: 0.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+/* The slider itself */
+.fontSlider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 80%;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 0.25rem;
+    background: var(--brand-900);
+
+}
+
+
+/* The thumb of the slider */
+.fontSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    background: var(--brand-100);
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid var(--brand-900)
+}
+
+.fontSlider::-moz-range-thumb {
+    width: 1rem;
+    height: 1rem;
+    background: var(--brand-100);
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid var(--brand-900)
+}
+
+.slider_icon {
+    margin-left: auto;
+    height: 3vh;
+    width: 3vh;
+    color: var(--brand-900);
+}

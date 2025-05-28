@@ -1,0 +1,56 @@
+[{
+    "name": "Cambrian",
+    "start": "-540",
+    "end": "-488"
+    },
+{
+    "name": "Ordivician",
+    "start": "-488",
+    "end": "-444"
+    },
+{
+    "name": "Silurian",
+    "start": "-444",
+    "end": "-416"
+    },
+{
+    "name": "Devonian",
+    "start": "-416",
+    "end": "-359"
+    },
+{
+    "name": "Carboniferous",
+    "start": "-359",
+    "end": "-299"
+    },
+{
+    "name": "Permian",
+    "start": "-299", 
+    "end": "-251"
+    },
+{
+    "name": "Triassic",
+    "start": "-251", 
+    "end": "-202"
+    },
+{
+    "name": "Jurassic",
+    "start": "-202", 
+    "end": "-146"
+    },
+{
+    "name": "Cretaceous",
+    "start": "-146", 
+    "end": "-65.5"
+    },
+{
+    "name": "Tertiary",
+    "start": "-65.5", 
+    "end": "-2.6"
+    },
+{
+    "name": "Quanternary",
+    "start": "-2.6", 
+    "end": "0.002024"
+    }
+]

@@ -1,0 +1,56 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+	for rc in ~/.bashrc.d/*; do
+		if [ -f "$rc" ]; then
+			. "$rc"
+		fi
+	done
+fi
+
+unset rc
+
+# https://robinwinslow.uk/tmux-and-ssh-auto-login-with-ssh-agent-finally
+if [ -z "$TMUX" ]; then
+    # we're not in a tmux session
+
+    if [ ! -z "$SSH_TTY" ]; then
+        # We logged in via SSH
+
+        # if ssh auth variable is missing
+        if [ -z "$SSH_AUTH_SOCK" ]; then
+            export SSH_AUTH_SOCK="$HOME/.ssh/.auth_socket"
+        fi
+
+        # if socket is available create the new auth session
+        if [ ! -S "$SSH_AUTH_SOCK" ]; then
+            eval $(ssh-agent -s -a "$SSH_AUTH_SOCK") &> /dev/null 2>&1
+            echo $SSH_AGENT_PID > $HOME/.ssh/.auth_pid
+	    # Add all default keys to ssh auth
+	    ssh-add 2>/dev/null
+        fi
+
+        # if agent isn't defined, recreate it from pid file
+        if [ -z $SSH_AGENT_PID ]; then
+            export SSH_AGENT_PID=`cat $HOME/.ssh/.auth_pid`
+        fi
+
+    fi
+fi
+

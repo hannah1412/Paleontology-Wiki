@@ -1,0 +1,27 @@
+.widget {
+  width: 100%;
+  max-width: 30rem;
+  height: 90%;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  font-weight: bold;
+}
+
+.larger {
+  max-width: none;
+}
+
+.select {
+  display: block;
+  z-index: 100;
+  font-size: 1rem;
+  background: var(--grey-100);
+  border: none;
+  border-bottom: 2px solid var(--brand-900);
+  padding: 0.5rem 0;
+}

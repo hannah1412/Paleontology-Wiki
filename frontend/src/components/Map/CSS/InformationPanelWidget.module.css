@@ -1,0 +1,68 @@
+/* INDIVIDUAL CARDS */
+.card {
+    margin: auto;
+    margin-bottom: 0.5rem;
+    border-style:solid;
+    border-radius: 10px;
+    border-color: var(--black);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+    width: 90%;
+    height: 8rem;
+    letter-spacing: 0.35em;
+    overflow: hidden;
+    font-size: inherit;
+    letter-spacing: inherit;
+  }
+  
+:root [dark-mode="true"] 
+.card {
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3);
+  border-color: var(--white);
+}
+
+/* FOR THE SUPERGROUP WIDGET */
+.empty_card{
+  margin: auto;
+  margin-bottom: 0.5rem;
+  border-style:solid;
+  border-radius: 10px;
+  border-color: var(--black);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+  width: 90%;
+  height: 38rem;
+  font-size: inherit;
+  letter-spacing: inherit;
+}
+
+:root [dark-mode="true"] 
+.empty_card {
+box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3);
+border-color: var(--white);
+}
+
+.cardText {
+  text-align: left;
+  word-wrap: break-word;
+  font-size: inherit;
+  letter-spacing: inherit;
+  margin-left: 0.5rem;
+}
+
+:root [dark-mode="true"]
+.cardText {
+  color: var(--white);
+
+}
+
+.placeHolderText{
+  text-align: left;
+  word-wrap: break-word;
+  font-size: inherit;
+  letter-spacing: inherit;
+  margin-left: 0.5rem;
+}
+
+:root [dark-mode="true"]
+.placeHolderText{
+  color: var(--white);
+}

@@ -1,0 +1,61 @@
+.welcome {
+  position: relative;
+  margin: 5rem auto;
+  z-index: 11;
+  width: 90%;
+  max-width: 36rem;
+  cursor: default;
+  color: var(--brand-900);
+}
+
+@media (min-height: 35rem) {
+  .welcome {
+    margin: 0;
+    position: absolute;
+    top: 47.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.header {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  width: 95%;
+}
+
+.description {
+  width: 95%;
+  margin: 1rem auto;
+  text-align: left;
+}
+
+.button {
+  color: var(--brand-900);
+  font-size: 1rem;
+  background-color: var(--grey-100);
+  border: 2px solid var(--brand-900);
+  border-radius: 17px;
+  margin: 0.3rem auto;
+  padding: 0.35rem 1.1rem;
+
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: var(--brand-900);
+  color: var(--grey-100);
+}
+
+.button.animate_motion:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+}
